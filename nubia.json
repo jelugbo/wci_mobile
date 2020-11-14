@@ -1,0 +1,758 @@
+{
+  "pastor": {
+    "db": "one_on_one",
+    "pk": "id",
+    "fields": {
+      "First Name": {
+        "post": "fname",
+        "db": "fname",
+        "req": true
+      },
+      "Last Name": {
+        "post": "lname",
+        "db": "lname",
+        "req": true
+      },
+      "Phone Number": {
+        "post": "phone",
+        "db": "phone",
+        "req": true
+      },
+      "Email Address": {
+        "post": "email",
+        "db": "email",
+        "req": true
+      },
+      "Comment or Description": {
+        "post": "comment",
+        "db": "comment",
+        "req": true
+      },
+      "Contact Date": {
+        "post": "contact_date",
+        "db": "contact_date",
+        "req": true
+      },
+      "Contact Time": {
+        "post": "contact_time",
+        "db": "contact_time",
+        "req": true
+      }
+    },
+    "email": {
+      "send_email": true,
+      "email_field": "email",
+      "subject": {
+        "text": "PST_EMAIL_SUBJECT",
+        "fields": {
+          "Last Name": "lname",
+          "First Name": "fname"
+        }
+      },
+      "body": {
+        "text": "PST_EMAIL_BODY",
+        "fields": {
+          "Last Name": "lname",
+          "First name": "fname"
+        }
+      },
+      "admin_subject": {
+        "text": "PST_ADMIN_EMAIL_SUBJECT",
+        "fields": {
+          "Last Name": "lname",
+          "First Name": "fname"
+        }
+      },
+      "admin_body": {
+        "text": "PST_ADMIN_EMAIL_BODY",
+        "fields": {
+          "Last Name": "lname",
+          "First Name": "fname",
+          "Phone": "phone",
+          "Email": "email",
+          "Comment": "comment",
+          "Contact Date": "contact_date",
+          "Contact Time": "contact_time"
+        }
+      }
+    }
+  },
+  "checkin": {
+    "db": "checkin",
+    "pk": "id",
+    "fields": {
+      "First Name": {
+        "post": "Fname",
+        "db": "firstname",
+        "req": true
+      },
+      "Last Name": {
+        "post": "Lname",
+        "db": "lastname",
+        "req": true
+      },
+      "Phone Number": {
+        "post": "Phone",
+        "db": "phone",
+        "req": true
+      },
+      "Email Address": {
+        "post": "Email",
+        "db": "email",
+        "req": true
+      },
+      "Address": {
+        "post": "Address",
+        "db": "address",
+        "req": true
+      },
+      "City": {
+        "post": "City",
+        "db": "city",
+        "req": true
+      },
+      "State": {
+        "post": "State",
+        "db": "state",
+        "req": true
+      },
+      "Zip": {
+        "post": "Zip",
+        "db": "zip",
+        "req": true
+      },
+      "Country": {
+        "post": "Country",
+        "db": "country",
+        "req": true
+      },
+      "Number of People": {
+        "post": "People",
+        "db": "people",
+        "req": true
+      },
+      "First Timer": {
+        "post": "Firsttimer",
+        "db": "firsttimer",
+        "req": true
+      }
+    }
+  },
+  "feedback": {
+    "db": "feedback",
+    "pk": "id",
+    "fields": {
+      "First Name": {
+        "post": "firstname",
+        "db": "firstname",
+        "req": true
+      },
+      "Last Name": {
+        "post": "lastname",
+        "db": "lastname",
+        "req": true
+      },
+      "Phone Number": {
+        "post": "phone",
+        "db": "phone",
+        "req": true
+      },
+      "Email Address": {
+        "post": "email",
+        "db": "email",
+        "req": true
+      },
+      "Comment or Description": {
+        "post": "message",
+        "db": "message",
+        "req": true
+      },
+      "Subject": {
+        "post": "subject",
+        "db": "subject",
+        "req": true
+      }
+    },
+    "email": {
+      "send_email": true,
+      "email_field": "email",
+      "subject": {
+        "text": "FBK_EMAIL_SUBJECT",
+        "fields": {
+          "Last Name": "lastname",
+          "First Name": "firstname"
+        }
+      },
+      "body": {
+        "text": "FBK_EMAIL_BODY",
+        "fields": {
+          "Last Name": "lastname",
+          "First name": "firstname"
+        }
+      },
+      "admin_subject": {
+        "text": "FBK_ADMIN_EMAIL_SUBJECT",
+        "fields": {
+          "Last Name": "lastname",
+          "First Name": "firstname"
+        }
+      },
+      "admin_body": {
+        "text": "FBK_ADMIN_EMAIL_BODY",
+        "fields": {
+          "Last Name": "lastname",
+          "First Name": "firstname",
+          "Phone": "phone",
+          "Email": "email",
+          "Subject": "subject",
+          "Message": "message"
+          
+        }
+      }
+    }
+  },
+  "wincare": {
+    "db": "wincare",
+    "pk": "id",
+    "fields": {
+      "First Name": {
+        "post": "Fname",
+        "db": "firstname",
+        "req": true
+      },
+      "Last Name": {
+        "post": "Lname",
+        "db": "lastname",
+        "req": true
+      },
+      "Phone Number": {
+        "post": "Phone",
+        "db": "phone",
+        "req": true
+      },
+      "Email Address": {
+        "post": "Email",
+        "db": "email",
+        "req": true
+      },
+      "Address": {
+        "post": "Address",
+        "db": "address",
+        "req": true
+      },
+      "City": {
+        "post": "City",
+        "db": "city",
+        "req": true
+      },
+      "State": {
+        "post": "State",
+        "db": "state",
+        "req": true
+      },
+      "Zip": {
+        "post": "Zip",
+        "db": "zip",
+        "req": true
+      },
+      "Country": {
+        "post": "Country",
+        "db": "country",
+        "req": true
+      },
+      "Gender": {
+        "post": "Gender",
+        "db": "gender",
+        "req": true
+      },
+      "Member": {
+        "post": "Member",
+        "db": "member",
+        "req": true
+      },
+      "Situation": {
+        "post": "Situation",
+        "db": "situation",
+        "req": true
+      }
+    }
+  },
+  "wofbi": {
+    "db": "wofbi",
+    "pk": "id",
+    "fields": {
+      "First Name": {
+        "post": "Fname",
+        "db": "firstname",
+        "req": true
+      },
+      "Last Name": {
+        "post": "Lname",
+        "db": "lastname",
+        "req": true
+      },
+      "Phone Number": {
+        "post": "Phone",
+        "db": "phone",
+        "req": true
+      },
+      "Email Address": {
+        "post": "Email",
+        "db": "email",
+        "req": true
+      },
+      "Comment or Description": {
+        "post": "Comments",
+        "db": "comments",
+        "req": true
+      },
+      "Course": {
+        "post": "Course",
+        "db": "course",
+        "req": true
+      },
+      "Past College": {
+        "post": "PastCollege",
+        "db": "pastcollege",
+        "req": true
+      },
+      "Terms": {
+        "post": "Terms",
+        "db": "terms",
+        "req": true
+      }
+    }
+  },
+  "firsttimer": {
+    "db": "firsttimer",
+    "pk": "id",
+    "fields": {
+      "First Name": {
+        "post": "Fname",
+        "db": "firstname",
+        "req": true
+      },
+      "Last Name": {
+        "post": "Lname",
+        "db": "lastname",
+        "req": true
+      },
+      "Phone Number": {
+        "post": "Phone",
+        "db": "phone",
+        "req": true
+      },
+      "Email Address": {
+        "post": "Email",
+        "db": "email",
+        "req": true
+      },
+      "Comment or Description": {
+        "post": "Message",
+        "db": "comments",
+        "req": true
+      },
+      "How you Heard": {
+        "post": "Hear",
+        "db": "hear",
+        "req": true
+      },
+      "Give Life": {
+        "post": "GiveLife",
+        "db": "givelife",
+        "req": true
+      },
+      "Contact Options": {
+        "post": "ContactOption",
+        "db": "contactoption",
+        "req": true
+      }
+    }
+  },
+  "salvation": {
+    "db": "salvation",
+    "pk": "id",
+    "fields": {
+      "First Name": {
+        "post": "Fname",
+        "db": "firstname",
+        "req": true
+      },
+      "Last Name": {
+        "post": "Lname",
+        "db": "lastname",
+        "req": true
+      },
+      "Phone Number": {
+        "post": "Phone",
+        "db": "phone",
+        "req": true
+      },
+      "Email Address": {
+        "post": "Email",
+        "db": "email",
+        "req": true
+      },
+      "Comment or Description": {
+        "post": "Message",
+        "db": "comments",
+        "req": true
+      },
+      "How you Heard": {
+        "post": "Hear",
+        "db": "hear",
+        "req": true
+      },
+      "Decision": {
+        "post": "Decision",
+        "db": "decision",
+        "req": true
+      },
+      "Give Life": {
+        "post": "GiveLife",
+        "db": "givelife",
+        "req": true
+      },
+      "Contact Options": {
+        "post": "ContactOption",
+        "db": "contactoption",
+        "req": true
+      }
+    }
+  },
+  "reserve": {
+    "db": "reserve",
+    "pk": "id",
+    "fields": {
+      "First Name": {
+        "post": "Fname",
+        "db": "firstname",
+        "req": true
+      },
+      "Last Name": {
+        "post": "Lname",
+        "db": "lastname",
+        "req": true
+      },
+      "Phone Number": {
+        "post": "Phone",
+        "db": "phone",
+        "req": true
+      },
+      "Email Address": {
+        "post": "Email",
+        "db": "email",
+        "req": true
+      },
+      "Comment or Description": {
+        "post": "Comments",
+        "db": "comments",
+        "req": true
+      },
+      "Service": {
+        "post": "Service",
+        "db": "service",
+        "req": true
+      }
+    }
+  },
+  "member": {
+    "db": "mob_users",
+    "pk": "id",
+    "fields": {
+      "First Name": {
+        "post": "firstname",
+        "db": "firstname",
+        "req": true
+      },
+      "Last Name": {
+        "post": "lastname",
+        "db": "lastname",
+        "req": true
+      },
+      "Phone Number": {
+        "post": "phone",
+        "db": "phone",
+        "req": true
+      },
+      "Email Address": {
+        "post": "email",
+        "db": "email",
+        "req": true
+      },
+      "How You Heard": {
+        "post": "how_you_heard",
+        "db": "how_you_heard",
+        "req": true
+      },
+      "Did You Give Your Life": {
+        "post": "give_your_life",
+        "db": "give_your_life",
+        "req": true
+      },
+      "Contact Preference": {
+        "post": "contact_pref",
+        "db": "contact_pref",
+        "req": true
+      },
+      "Comments": {
+        "post": "comments",
+        "db": "comments",
+        "req": true
+      }
+    },
+    "email": {
+      "send_email": true,
+      "email_field": "email",
+      "subject": {
+        "text": "MEM_EMAIL_SUBJECT",
+        "fields": {
+          "Last Name": "lname",
+          "First Name": "fname"
+        }
+      },
+      "body": {
+        "text": "MEM_EMAIL_BODY",
+        "fields": {
+          "Last Name": "lname",
+          "First name": "fname",
+          "Token": "token"
+        }
+      },
+      "admin_subject": {
+        "text": "MEM_ADMIN_EMAIL_SUBJECT",
+        "fields": {
+          "Last Name": "lname",
+          "First Name": "fname"
+        }
+      },
+      "admin_body": {
+        "text": "MEM_ADMIN_EMAIL_BODY",
+        "fields": {
+          "Last Name": "lname",
+          "First Name": "fname",
+          "Phone": "phone",
+          "Email": "email",
+          "Address": "address",
+          "State": "state",
+          "Country": "country"
+        }
+      }
+    }
+  },
+  "notifications": {
+    "db": "notification_groups",
+    "pk": "id",
+    "fields": {
+     "ID": {
+        "post": "id",
+        "db": "id",
+        "req": false
+      },
+      "Group Name": {
+        "post": "name",
+        "db": "Group_Name",
+        "req": true
+      },
+      "Enabled": {
+        "post": "enabled",
+        "db": "Enabled",
+        "req": true
+      }
+    },
+    "email": {
+      "send_email": false
+    }
+  },
+  "family": {
+    "db": "family",
+    "pk": "id",
+    "fields": {
+      "First Name": {
+        "post": "fname",
+        "db": "fname",
+        "req": true
+      },
+      "Last Name": {
+        "post": "lname",
+        "db": "lname",
+        "req": true
+      },
+      "Relationship": {
+        "post": "relationship",
+        "db": "relationship",
+        "req": true
+      },
+      "Member ID": {
+        "post": "member_id",
+        "db": "member_id",
+        "where":true,
+        "req": true
+      }
+    },
+    "email": {
+      "send_email": false
+    }
+  },
+  "join": {
+    "db": "jointeam",
+    "pk": "id",
+    "fields": {
+      "Department": {
+        "post": "department",
+        "db": "department",
+        "req": true
+      },
+     "info": {
+        "post": "info",
+        "db": "info",
+        "req": false
+      },
+    "firstname": {
+        "post": "firstname",
+        "db": "firstname",
+        "req": true
+      },
+      "lastname": {
+        "post": "lastname",
+        "db": "lastname",
+        "req": true
+      },
+      "phone": {
+        "post": "phone",
+        "db": "phone",
+        "req": true
+      },
+    "email": {
+        "post": "email",
+        "db": "email",
+        "req": true
+      },
+      "Approved": {
+        "post": "approved",
+        "db": "approved",
+        "req": false
+      }
+    },
+    "email": {
+      "send_email": false
+    }
+  },
+  "prayers": {
+    "db": "prayers",
+    "pk": "id",
+    "fields": {
+      "Prayer": {
+        "post": "prayer",
+        "db": "prayer",
+        "req": true
+      },
+    "firstname": {
+        "post": "firstname",
+        "db": "firstname",
+        "req": true
+      },
+      "lastname": {
+        "post": "lastname",
+        "db": "lastname",
+        "req": true
+      },
+      "phone": {
+        "post": "phone",
+        "db": "phone",
+        "req": true
+      },
+    "email": {
+        "post": "email",
+        "db": "email",
+        "req": true
+      },
+      "Approved": {
+        "post": "approved",
+        "db": "approved",
+        "req": false
+      }
+    },
+    "email": {
+      "send_email": false
+    }
+  },
+  "testimonials": {
+    "db": "testimonials",
+    "pk": "id",
+    "fields": {
+      "Testimony": {
+        "post": "testimony",
+        "db": "testimony",
+        "req": true
+      },
+      "firstname": {
+        "post": "firstname",
+        "db": "firstname",
+        "req": true
+      },
+      "lastname": {
+        "post": "lastname",
+        "db": "lastname",
+        "req": true
+      },
+      "phone": {
+        "post": "phone",
+        "db": "phone",
+        "req": true
+      },
+      "email": {
+        "post": "email",
+        "db": "email",
+        "req": true
+      }
+    },
+    "email": {
+      "send_email": false
+    }
+  },
+  "offering_type": {
+    "db": "xlxum_hsp_offering_type",
+    "pk": "offering_type_pk",
+    "fields": {
+      "Offering Type Name": {
+        "post": "offering_type_name",
+        "db": "offering_type_name",
+        "req": true
+      },
+      "Offering Type ID": {
+        "post": "offering_type_id",
+        "db": "offering_type_id",
+        "req": true
+      }
+    }},
+  "ministry": {
+    "db": "ministry",
+    "pk": "id",
+    "fields": {
+      "Ministry Name": {
+        "post": "ministry",
+        "db": "ministry",
+        "req": true
+      },
+      "Contact Person": {
+        "post": "contact",
+        "db": "contact",
+        "req": true
+      },
+      "Phone Number": {
+        "post": "phone",
+        "db": "phone",
+        "req": true
+      },
+      "Email Address": {
+        "post": "email",
+        "db": "email",
+        "req": true
+      }
+    },
+    "email": {
+      "send_email": false
+    }
+  }
+}

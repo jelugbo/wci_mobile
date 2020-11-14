@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-toolbar color="winners-red">
+    <ion-text>
+      <div class="ion-text-wrap ion-text-end ion-paddings">
+        WINNERS CHAPEL INT'L <br> NEW YORK
+      </div>
+    </ion-text>
+    <ion-buttons slot="start" style="flex-flow: column">
+      <ion-menu-button></ion-menu-button>
+      <ion-back-button text="Back" icon="caret-back"></ion-back-button>
+    </ion-buttons>
+    <img src="assets/img/logo22.png" alt="" slot="end" width="70vw" class="ion-padding-vertical ion-padding-end">
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list class="remove-top">
+    <img class="middlelogo" src="assets/img/events.jpg" alt="">
+    <ion-item color="light">
+      <ion-button fill="clear" (click)='goBack()'>
+        <ion-icon slot="icon-only" name="caret-back-circle-outline" color="dark"></ion-icon>
+      </ion-button>
+      <div class="ion-text-center center-me">
+        <h4>{{getMon(dates) +' '+dates.getFullYear()}}</h4>
+      </div>
+      <ion-button slot="end" fill="clear" (click)='goNext()'>
+        <ion-icon slot="icon-only" name="caret-forward-circle-outline" color="dark"></ion-icon>
+      </ion-button>
+    </ion-item>
+
+    <div *ngIf="showEvent">
+      <ion-item *ngFor="let item of eventList" class="card item-avatar item-text-wrap" (click)="itemTapped(item)">
+        <!-- <img ng-src="http://7thcolonnade.com/{{item.imageSmall}}" alt="{{item.name}} Photo"> -->
+        <ion-avatar slot="start">
+          <bj-avatar  charcount="3" height="100px" width="100px" numdata="{{getNum(item.event_date)}}" textdata="{{getDay(item.event_date)}}" shape="round"></bj-avatar>
+        </ion-avatar>
+        <ion-label>
+        <h4>{{item.title}}</h4>
+        <h4>When: {{doDate(item.event_date, item.event_time)  | date:'short' }}</h4>
+        <h4>Where: {{item.event_venue}}</h4>
+        </ion-label>
+      </ion-item>
+    </div>
+    <ion-item *ngIf="!showEvent"  >
+      <h3 style="text-align:center;">There are no events to show</h3>
+    </ion-item>
+  </ion-list>
+</ion-content>

@@ -1,0 +1,7 @@
+{
+  "name": "wciny",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

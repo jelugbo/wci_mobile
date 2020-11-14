@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar color="winners-red">
+    <ion-text>
+      <div class="ion-text-wrap ion-text-end ion-paddings">
+        WINNERS CHAPEL INT'L <br> NEW YORK
+      </div>
+    </ion-text>
+    <ion-buttons slot="start" style="flex-flow: column">
+      <ion-menu-button></ion-menu-button>
+      <ion-back-button text="Back" icon="caret-back"></ion-back-button>
+    </ion-buttons>
+    <img src="assets/img/logo22.png" alt="" slot="end" width="70vw" class="ion-padding-vertical ion-padding-end">
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <img class="middlelogo" src="assets/img/domi.jpg" alt="" *ngIf="hasHeader">
+  <iframe id="modalFrame" class="centerme"  [src]="clipSrc | safe"  *ngIf="!hasHeader" allowfullscreen></iframe>
+  <iframe id="radioFrame" class="center-radio"  [src]="clipSrc | safe"  *ngIf="hasHeader" allowfullscreen></iframe>
+</ion-content>

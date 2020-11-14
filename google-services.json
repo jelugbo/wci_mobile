@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "503046750182",
+    "firebase_url": "https://wciny-294204.firebaseio.com",
+    "project_id": "wciny-294204",
+    "storage_bucket": "wciny-294204.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:503046750182:android:fb9c4f54467e18a7652027",
+        "android_client_info": {
+          "package_name": "com.wci.ny"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "503046750182-imgbosfcgbvme7u5hrf6b9ac6qs2lh36.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDbqP8C4hlgGqXFHSRlwx-knUW0rI0eSHI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "503046750182-imgbosfcgbvme7u5hrf6b9ac6qs2lh36.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

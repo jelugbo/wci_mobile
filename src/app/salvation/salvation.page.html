@@ -1,0 +1,160 @@
+<ion-header>
+  <ion-toolbar color="winners-red">
+    <ion-text>
+      <div class="ion-text-wrap ion-text-end ion-paddings">
+        WINNERS CHAPEL INT'L <br> NEW YORK
+      </div>
+    </ion-text>
+    <ion-buttons slot="start" style="flex-flow: column">
+      <ion-menu-button></ion-menu-button>
+      <ion-back-button text="Back" icon="caret-back"></ion-back-button>
+    </ion-buttons>
+    <img src="assets/img/logo22.png" alt="" slot="end" width="70vw" class="ion-padding-vertical ion-padding-end">
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item color="light">
+    <div class="ion-text-left">
+      <h5 style="font-weight: bold">SALVATION FORM</h5>
+    </div>
+  </ion-item>
+  <ion-list>
+    <form [formGroup]="salvationForm">
+      <div [hidden]="isPageTwo">
+        <ion-row>
+          <ion-col size="6">
+            <ion-item>
+              <ion-label position="stacked" color="primary" >First Name:
+              </ion-label>
+              <ion-input formControlName="Fname" type="text"
+                         [class.invalid]="!salvationForm.controls.Fname.valid && (salvationForm.controls.Fname.dirty || submitAttempt)"></ion-input>
+            </ion-item>
+            <ion-item
+                    *ngIf="!salvationForm.controls.Fname.valid  && (salvationForm.controls.Fname.dirty || submitAttempt)">
+              <p>Please enter a valid name.</p>
+            </ion-item>
+          </ion-col>
+          <ion-col size="6">
+            <ion-item>
+              <ion-label position="stacked" color="primary" >Last Name:
+              </ion-label>
+              <ion-input formControlName="Lname" type="text"
+                         [class.invalid]="!salvationForm.controls.Lname.valid && (salvationForm.controls.Lname.dirty || submitAttempt)"></ion-input>
+            </ion-item>
+            <ion-item
+                    *ngIf="!salvationForm.controls.Lname.valid  && (salvationForm.controls.Lname.dirty || submitAttempt)">
+              <p>Please enter a valid name.</p>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size="6">
+            <ion-item>
+              <ion-label position="stacked" color="primary" >Telephone:
+              </ion-label>
+              <ion-input formControlName="Phone" type="tel"
+                         [brmasker]="{mask: '(000)-000-0000', type:'num', len:14}"
+                         [class.invalid]="!salvationForm.controls.Phone.valid && (salvationForm.controls.Phone.dirty || submitAttempt)"></ion-input>
+            </ion-item>
+            <ion-item
+                    *ngIf="!salvationForm.controls.Phone.valid  && (salvationForm.controls.Phone.dirty || submitAttempt)">
+              <p>Please enter a valid phone number.</p>
+            </ion-item>
+          </ion-col>
+          <ion-col size="6">
+            <ion-item>
+              <ion-label position="stacked" color="primary" >Email:</ion-label>
+              <ion-input formControlName="Email" type="email"
+                         [class.invalid]="!salvationForm.controls.Email.valid && (salvationForm.controls.Email.dirty || submitAttempt)"></ion-input>
+            </ion-item>
+            <ion-item
+                    *ngIf="!salvationForm.controls.Email.valid  && (salvationForm.controls.Email.dirty || submitAttempt)">
+              <p>Please enter a valid email address.</p>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+        <ion-item>
+          <ion-label position="stacked" color="primary" class="ion-text-wrap" >
+            How did you hear about us?
+          </ion-label>
+          <ion-select formControlName="Hear" interface="action-sheet">
+            <ion-select-option value="Online">Online</ion-select-option>
+            <ion-select-option value="Social Media">Social Media</ion-select-option>
+            <ion-select-option value="Through Friends">Through Friends</ion-select-option>
+            <ion-select-option value="Flyers">Flyers</ion-select-option>
+          </ion-select>
+        </ion-item>
+        <ion-item
+                *ngIf="!salvationForm.controls.Hear.valid  && (salvationForm.controls.Hear.dirty || submitAttempt)">
+          <p>Please select an option.</p>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked" color="primary" class="ion-text-wrap" >
+            Did you give your life to Christ through our website?
+          </ion-label>
+          <ion-select formControlName="GiveLife" interface="action-sheet">
+            <ion-select-option value="Yes">Yes</ion-select-option>
+            <ion-select-option value="No">No</ion-select-option>
+            <ion-select-option value="Still Thinking">Still Thinking</ion-select-option>
+            <ion-select-option value="No, This is my First Time">No, This is my First Time</ion-select-option>
+          </ion-select>
+        </ion-item>
+        <ion-item
+                *ngIf="!salvationForm.controls.GiveLife.valid  && (salvationForm.controls.GiveLife.dirty || submitAttempt)">
+          <p>Please select an option.</p>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked" color="primary" class="ion-text-wrap" >
+            My decision today?
+          </ion-label>
+          <ion-select formControlName="Decision" interface="action-sheet">
+            <ion-select-option value="I committed my life to Jesus">I committed my life to Jesus</ion-select-option>
+            <ion-select-option value="I rededicated my life to Jesus">I rededicated my life to Jesus</ion-select-option>
+          </ion-select>
+        </ion-item>
+        <ion-item
+                *ngIf="!salvationForm.controls.Decision.valid  && (salvationForm.controls.Decision.dirty || submitAttempt)">
+          <p>Please select an option.</p>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked" color="primary" class="ion-text-wrap" >
+            How would you like us to contact you?
+          </ion-label>
+          <ion-select formControlName="ContactOption" interface="action-sheet">
+            <ion-select-option value="By Email Only">By Email Only</ion-select-option>
+            <ion-select-option value="By Phone Only">By Phone Only</ion-select-option>
+            <ion-select-option value="Either Phone or Email">Either Phone or Email</ion-select-option>
+            <ion-select-option value="Please Do Not Contact Me">Please Do Not Contact Me</ion-select-option>
+          </ion-select>
+        </ion-item>
+        <ion-item
+                *ngIf="!salvationForm.controls.ContactOption.valid  && (salvationForm.controls.ContactOption.dirty || submitAttempt)">
+          <p>Please select an option.</p>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked" color="primary" class="ion-text-wrap" >
+            Message
+          </ion-label>
+          <ion-textarea rows="2" autoGrow="true" formControlName="Message"
+                        [class.invalid]="!salvationForm.controls.Message.valid && (salvationForm.controls.Message.dirty || submitAttempt)"></ion-textarea>
+          <!--  <ion-textarea rows="2" autoGrow="true" formControlName="Comments" tooltip="{{detailsTooltip}}" hideOthers="true" positionV="top" [arrow]="showArrow" [event]="tEvent" [duration]="duration"
+                          [class.invalid]="!salvationForm.controls.Comments.valid && (salvationForm.controls.Comments.dirty || submitAttempt)"></ion-textarea>-->
+        </ion-item>
+        <ion-item
+                *ngIf="!salvationForm.controls.Message.valid  && (salvationForm.controls.Message.dirty || submitAttempt)">
+          <p>Please provide details.</p>
+        </ion-item>
+        <ion-row>
+          <ion-col size="12">
+            <section>
+              <ion-button color="winners-red" expand="block" slot="start" (click)="save()">
+                Submit
+              </ion-button>
+            </section>
+          </ion-col>
+        </ion-row>
+      </div>
+    </form>
+  </ion-list>
+</ion-content>

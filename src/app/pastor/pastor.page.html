@@ -1,0 +1,95 @@
+<ion-header>
+  <ion-toolbar color="winners-red">
+    <ion-text>
+      <div class="ion-text-wrap ion-text-end ion-paddings">
+        WINNERS CHAPEL INT'L <br> NEW YORK
+      </div>
+    </ion-text>
+    <ion-buttons slot="start" style="flex-flow: column">
+      <ion-menu-button></ion-menu-button>
+      <ion-back-button text="Back" icon="caret-back"></ion-back-button>
+    </ion-buttons>
+    <img src="assets/img/logo22.png" alt="" slot="end" width="70vw" class="ion-padding-vertical ion-padding-end">
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item color="light">
+    <div class="ion-text-left">
+      <h5 style="font-weight: bold">SCHEDULE APPOINTMENT</h5>
+    </div>
+  </ion-item>
+  <ion-list class="remove-top">
+ <!--   <img class="middlelogo" src="assets/img/prayer.jpg" alt="">-->
+    <form [formGroup]="scheduleForm">
+      <ion-item>
+        <ion-label position="stacked" >First Name:</ion-label>
+        <ion-input formControlName="fname" type="text" [class.invalid]="!scheduleForm.controls.fname.valid && (scheduleForm.controls.fname.dirty || submitAttempt)"></ion-input>
+      </ion-item>
+      <ion-item *ngIf="!scheduleForm.controls.fname.valid  && (scheduleForm.controls.fname.dirty || submitAttempt)">
+        <p>Please enter your first name.</p>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked" >Last Name:</ion-label>
+        <ion-input formControlName="lname" type="text" [class.invalid]="!scheduleForm.controls.lname.valid && (scheduleForm.controls.lname.dirty || submitAttempt)"></ion-input>
+      </ion-item>
+      <ion-item *ngIf="!scheduleForm.controls.lname.valid  && (scheduleForm.controls.lname.dirty || submitAttempt)">
+        <p>Please enter your last name.</p>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Email:</ion-label>
+        <ion-input formControlName="email" type="email" [class.invalid]="!scheduleForm.controls.email.valid && (scheduleForm.controls.email.dirty || submitAttempt)"></ion-input>
+      </ion-item>
+      <ion-item *ngIf="!scheduleForm.controls.email.valid  && (scheduleForm.controls.email.dirty || submitAttempt)">
+        <p>Please enter a valid email address.</p>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked" >Phone:</ion-label>
+        <ion-input formControlName="phone" [brmasker]="{mask: '(000)-000-0000', type:'num', len:14}" type="tel" [class.invalid]="!scheduleForm.controls.phone.valid && (scheduleForm.controls.phone.dirty || submitAttempt)"></ion-input>
+      </ion-item>
+      <ion-item *ngIf="!scheduleForm.controls.phone.valid  && (scheduleForm.controls.phone.dirty || submitAttempt)">
+        <p>Please enter your phone number.</p>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Purpose / Information:</ion-label>
+        <ion-textarea autoGrow="true" formControlName="comment" [class.invalid]="!scheduleForm.controls.comment.valid && (scheduleForm.controls.comment.dirty || submitAttempt)"></ion-textarea>
+      </ion-item>
+      <ion-item *ngIf="!scheduleForm.controls.comment.valid  && (scheduleForm.controls.comment.dirty || submitAttempt)">
+        <p>Please enter purpose / information.</p>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Best Contact Date:</ion-label>
+        <ion-datetime formControlName="contact_date" displayFormat="DD MMMM YYYY" [class.invalid]="!scheduleForm.controls.contact_date.valid && (scheduleForm.controls.contact_date.dirty || submitAttempt)"></ion-datetime>
+      </ion-item>
+      <ion-item *ngIf="!scheduleForm.controls.contact_date.valid  && (scheduleForm.controls.contact_date.dirty || submitAttempt)">
+        <p>Please enter best contact date.</p>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Best Contact Time:</ion-label>
+        <ion-datetime formControlName="contact_time" displayFormat="hh:mm A" [class.invalid]="!scheduleForm.controls.contact_time.valid && (scheduleForm.controls.contact_time.dirty || submitAttempt)"></ion-datetime>
+      </ion-item>
+      <ion-item *ngIf="!scheduleForm.controls.contact_time.valid  && (scheduleForm.controls.contact_time.dirty || submitAttempt)">
+        <p>Please enter best contact time.</p>
+      </ion-item>
+      <ion-row>
+        <ion-col size="6">
+          <section>
+            <ion-button color="winners-red" expand="block" slot="start" (click)="save()">
+              Submit
+            </ion-button>
+          </section>
+        </ion-col>
+        <ion-col size="6">
+          <section>
+            <ion-button color="light" expand="block" slot="start" [routerLink]="['','socials']" routerDirection="back">
+              Cancel
+            </ion-button>
+          </section>
+        </ion-col>
+      </ion-row>
+
+    </form>
+  </ion-list>
+
+</ion-content>
+

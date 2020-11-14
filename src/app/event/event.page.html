@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-toolbar color="winners-red">
+    <ion-text>
+      <div class="ion-text-wrap ion-text-end ion-paddings">
+        WINNERS CHAPEL INT'L <br> NEW YORK
+      </div>
+    </ion-text>
+    <ion-buttons slot="start" style="flex-flow: column">
+      <ion-menu-button></ion-menu-button>
+      <ion-back-button text="Back" icon="caret-back"></ion-back-button>
+    </ion-buttons>
+    <img src="assets/img/logo22.png" alt="" slot="end" width="70vw" class="ion-padding-vertical ion-padding-end">
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list class="card remove-top">
+    <img class="middlelogo" src="{{headerImage}}" alt="">
+    <div class="ion-padding-horizontal">
+      <h2>{{ item.introtext}}</h2>
+      <h4>{{doHTML(item.content,item.introtext)}}</h4>
+      <p>Date: {{doDate(item.event_date, item.event_time) | date:'short' }}</p>
+<!--      <p>Ends: {{doDate(item.event_date, item.event_time) | date:'short' }}</p>-->
+      <p>Venue: {{ item.event_venue }}</p>
+    </div>
+
+    <ion-row>
+      <ion-col size="5">
+        <section>
+          <ion-button color="winners-red" expand="block" (click)="shareUs(item)">
+            Share
+            <ion-icon name="share" slot="end"></ion-icon>
+          </ion-button>
+        </section>
+      </ion-col>
+      <ion-col size="7">
+        <section>
+          <ion-button color="light" expand="block" (click)="createEvent(item)">
+            Save the Date
+            <ion-icon name="calendar" slot="end"></ion-icon>
+          </ion-button>
+        </section>
+      </ion-col>
+    </ion-row>
+  </ion-list>
+
+</ion-content>

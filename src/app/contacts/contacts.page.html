@@ -1,0 +1,56 @@
+<ion-header>
+  <ion-toolbar color="winners-red">
+    <ion-text>
+      <div class="ion-text-wrap ion-text-end ion-paddings">
+        WINNERS CHAPEL INT'L <br> NEW YORK
+      </div>
+    </ion-text>
+    <ion-buttons slot="start" style="flex-flow: column">
+      <ion-menu-button></ion-menu-button>
+      <ion-back-button text="Back" icon="caret-back"></ion-back-button>
+    </ion-buttons>
+    <img src="assets/img/logo22.png" alt="" slot="end" width="70vw" class="ion-padding-vertical ion-padding-end">
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<!--  <div id="mapcanvas"></div>-->
+  <div class="map-wrapper" (click)="navToChurch()">
+    <div id="map_center">
+      <img src="assets/img/location_marker.png" alt="marker" />
+    </div>
+    <div #map id="map"></div>
+  </div>
+  <ion-item color="light">
+    <div class="ion-text-left">
+      <h5 style="font-weight: bold">CONTACT</h5>
+    </div>
+  </ion-item>
+  <ion-item>
+    <div class="ion-padding">
+      <ion-text style="font-weight: bold"><p>Winners Chapel Int’l New York</p></ion-text>
+      <ion-text>310 Fulton Avenue</ion-text>
+      <p class="small-pad-bottom">Hempstead NY 11550</p>
+      <p>Tel: (646) 944 2999</p>
+      <p class="small-pad-bottom"><span style="color: white">Tel: </span>(718) 464 4585</p>
+      <p>Email: info@winnerschapelNY.org</p>
+      <p>Website : www.winnerschapelNY.org</p>
+    </div>
+  </ion-item>
+  <ion-row>
+    <ion-col size="5">
+      <section>
+        <ion-button color="winners-red" expand="block"  [routerLink]="['','feedback']" routerDirection="forward">
+          FEEDBACK
+        </ion-button>
+      </section>
+    </ion-col>
+    <ion-col size="7">
+      <section>
+        <ion-button color="light" expand="block" [routerLink]="['','service']" routerDirection="forward">
+          SERVICE SCHEDULE
+        </ion-button>
+      </section>
+    </ion-col>
+  </ion-row>
+</ion-content>

@@ -1,0 +1,84 @@
+<ion-header>
+  <ion-toolbar color="winners-red">
+    <ion-text>
+      <div class="ion-text-wrap ion-text-end ion-paddings">
+        WINNERS CHAPEL INT'L <br> NEW YORK
+      </div>
+    </ion-text>
+    <ion-buttons slot="start" style="flex-flow: column">
+      <ion-menu-button></ion-menu-button>
+      <ion-back-button text="Back" icon="caret-back"></ion-back-button>
+    </ion-buttons>
+    <img src="assets/img/logo22.png" alt="" slot="end" width="70vw" class="ion-padding-vertical ion-padding-end">
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list class="remove-top">
+    <img class="middlelogo" src="assets/img/bible_study.jpg" alt="">
+    <ion-item color="light">
+      <ion-button fill="clear" (click)='goBack()'>
+        <ion-icon slot="icon-only" name="caret-back-circle-outline" color="dark"></ion-icon>
+      </ion-button>
+      <div class="ion-text-center center-me">
+        <h4>{{getMon(dates) +' '+dates.getFullYear()}}</h4>
+      </div>
+      <ion-button slot="end" fill="clear" (click)='goNext()'>
+        <ion-icon slot="icon-only" name="caret-forward-circle-outline" color="dark"></ion-icon>
+      </ion-button>
+    </ion-item>
+    <div class="ion-padding-top" >
+      <ion-button color="light" expand="full" (click)="addNew()"> <h4>Add New Note</h4></ion-button>
+    </div>
+
+    <div *ngIf="showNotes">
+      <ion-card *ngFor="let note of notes">
+
+        <ion-item>
+          <ion-avatar>
+            <bj-avatar  charcount="3" height="80px" width="80px" numdata="{{getNum(note.date)}}" textdata="{{getDay(note.date)}}" shape="round"></bj-avatar>
+          </ion-avatar>
+          <h1 class="ion-margin-start ion-text-capitalize">{{note.topic}}</h1>
+        </ion-item>
+
+        <ion-card-content>
+          <p>{{note.content}}</p>
+        </ion-card-content>
+        <ion-row>
+          <ion-col>
+            <ion-button color="winners-red" (click)="editMe(note)">
+              <ion-icon slot="start" name="create"></ion-icon>
+              <div>Edit</div>
+            </ion-button>
+          </ion-col>
+          <ion-col>
+            <ion-button color="light" (click)="onItemDelete(note)">
+              <ion-icon slot="start" name="remove-circle"></ion-icon>
+              <div>Delete</div>
+            </ion-button>
+          </ion-col>
+          <ion-col class="ion-text-center">
+            <ion-button color="dark" (click)="shareMe(note)">
+              <ion-icon slot="start" name="share"></ion-icon>
+              <div>Share</div>
+            </ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-card>
+<!--      <ion-item *ngFor="let item of notes" class="card item-avatar item-text-wrap" (click)="itemTapped(item)">
+        &lt;!&ndash; <img ng-src="http://7thcolonnade.com/{{item.imageSmall}}" alt="{{item.name}} Photo"> &ndash;&gt;
+        <ion-avatar slot="start">
+          <bj-avatar  charcount="3" height="100px" width="100px" numdata="{{getNum(item.date)}}" textdata="{{getDay(item.date)}}" shape="round"></bj-avatar>
+        </ion-avatar>
+        <ion-label>
+          <h4>{{item.topic}}</h4>
+       &lt;!&ndash;   <h4>When: {{doDate(item.event_date, item.event_time)  | date:'short' }}</h4>&ndash;&gt;
+          <h4>Where: {{item.content}}</h4>
+        </ion-label>
+      </ion-item>-->
+    </div>
+    <ion-item *ngIf="!showNotes"  >
+      <h3 style="text-align:center;">There are no archived notes to show</h3>
+    </ion-item>
+  </ion-list>
+</ion-content>

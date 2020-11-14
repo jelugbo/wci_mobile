@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar color="winners-red">
+    <ion-text>
+      <div class="ion-text-wrap ion-text-end ion-paddings">
+        WINNERS CHAPEL INT'L <br> NEW YORK
+      </div>
+    </ion-text>
+    <ion-buttons slot="start" style="flex-flow: column">
+      <ion-menu-button></ion-menu-button>
+      <ion-back-button text="Back" icon="caret-back"></ion-back-button>
+    </ion-buttons>
+    <img src="assets/img/logo22.png" alt="" slot="end" width="70vw" class="ion-padding-vertical ion-padding-end">
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list class="remove-top">
+    <img class="middlelogo" src="assets/img/communion.jpg" alt="">
+    <ion-item color="light">
+      <div class="ion-text-center center-me">
+        <h4>Subscribe to be notified</h4>
+      </div>
+    </ion-item>
+    <ion-item *ngFor="let i of itemList">
+      <ion-label>{{getValue(i,'Group_Name')}}</ion-label>
+      <ion-toggle checked="{{getValue(i,'Enabled')}}" color="winners-red" (ionChange)=" onToggleChange(i,$event.detail)"></ion-toggle>
+    </ion-item>
+
+  </ion-list>
+
+</ion-content>

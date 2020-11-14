@@ -1,0 +1,79 @@
+<ion-header>
+  <ion-toolbar color="winners-red">
+    <ion-text>
+      <div class="ion-text-wrap ion-text-end ion-paddings">
+        WINNERS CHAPEL INT'L <br> NEW YORK
+      </div>
+    </ion-text>
+    <ion-buttons slot="start" style="flex-flow: column">
+      <ion-menu-button></ion-menu-button>
+      <ion-back-button text="Back" icon="caret-back"></ion-back-button>
+    </ion-buttons>
+    <img src="assets/img/logo22.png" alt="" slot="end" width="70vw" class="ion-padding-vertical ion-padding-end">
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list class="remove-top">
+    <img class="middlelogo" src="assets/img/testimony.jpg" alt="">
+    <form [formGroup]="testimonyForm">
+      <ion-item>
+        <ion-label position="stacked" >First Name:</ion-label>
+        <ion-input formControlName="firstname" type="text" [class.invalid]="!testimonyForm.controls.firstname.valid && (testimonyForm.controls.firstname.dirty || submitAttempt)"></ion-input>
+      </ion-item>
+      <ion-item *ngIf="!testimonyForm.controls.firstname.valid  && (testimonyForm.controls.firstname.dirty || submitAttempt)">
+        <p>Please enter your first name.</p>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked" >Last Name:</ion-label>
+        <ion-input formControlName="lastname" type="text" [class.invalid]="!testimonyForm.controls.lastname.valid && (testimonyForm.controls.lastname.dirty || submitAttempt)"></ion-input>
+      </ion-item>
+      <ion-item *ngIf="!testimonyForm.controls.lastname.valid  && (testimonyForm.controls.lastname.dirty || submitAttempt)">
+        <p>Please enter your last name.</p>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Email:</ion-label>
+        <ion-input formControlName="email" type="email" [class.invalid]="!testimonyForm.controls.email.valid && (testimonyForm.controls.email.dirty || submitAttempt)"></ion-input>
+      </ion-item>
+      <ion-item *ngIf="!testimonyForm.controls.email.valid  && (testimonyForm.controls.email.dirty || submitAttempt)">
+        <p>Please enter a valid email address.</p>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked" >Phone:</ion-label>
+        <ion-input formControlName="phone" [brmasker]="{mask: '(000)-000-0000', type:'num', len:14}" type="tel" [class.invalid]="!testimonyForm.controls.phone.valid && (testimonyForm.controls.phone.dirty || submitAttempt)"></ion-input>
+      </ion-item>
+      <ion-item *ngIf="!testimonyForm.controls.phone.valid  && (testimonyForm.controls.phone.dirty || submitAttempt)">
+        <p>Please enter your phone number.</p>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Testimonies:</ion-label>
+        <ion-textarea autoGrow="true" formControlName="testimony" [class.invalid]="!testimonyForm.controls.testimony.valid && (testimonyForm.controls.testimony.dirty || submitAttempt)"></ion-textarea>
+      </ion-item>
+      <ion-item *ngIf="!testimonyForm.controls.testimony.valid  && (testimonyForm.controls.testimony.dirty || submitAttempt)">
+        <p>Please enter your testimonies.</p>
+      </ion-item>
+      <ion-item [hidden]="true">
+        <ion-label position="floating">UserId:</ion-label>
+        <ion-input formControlName="approved" type="text"></ion-input>
+      </ion-item>
+      <ion-row>
+        <ion-col size="6">
+          <section>
+            <ion-button color="winners-red" expand="block" slot="start" (click)="save()">
+              Submit
+            </ion-button>
+          </section>
+        </ion-col>
+        <ion-col size="6">
+          <section>
+            <ion-button color="light" expand="block" slot="start" [routerLink]="['','tabs']" routerDirection="back">
+              Cancel
+            </ion-button>
+          </section>
+        </ion-col>
+      </ion-row>
+
+    </form>
+  </ion-list>
+
+</ion-content>

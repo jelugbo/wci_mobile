@@ -1,0 +1,164 @@
+<ion-header>
+  <ion-toolbar color="winners-red">
+    <ion-text>
+      <div class="ion-text-wrap ion-text-end ion-paddings">
+        WINNERS CHAPEL INT'L <br> NEW YORK
+      </div>
+    </ion-text>
+    <ion-buttons slot="start" style="flex-flow: column">
+      <ion-menu-button></ion-menu-button>
+      <ion-back-button text="Back" icon="caret-back"></ion-back-button>
+    </ion-buttons>
+    <img src="assets/img/logo22.png" alt="" slot="end" width="70vw" class="ion-padding-vertical ion-padding-end">
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item color="light">
+    <div class="ion-text-left">
+      <h5 style="font-weight: bold">CHECK-IN FORM</h5>
+    </div>
+  </ion-item>
+  <ion-list>
+    <form [formGroup]="checkinForm">
+      <ion-row>
+        <ion-col size="6">
+          <ion-item>
+            <ion-label position="floating" color="primary">First Name:</ion-label>
+            <ion-input formControlName="Fname" type="text"
+                       [class.invalid]="!checkinForm.controls.Fname.valid && (checkinForm.controls.Fname.dirty || submitAttempt)"></ion-input>
+          </ion-item>
+          <ion-item
+                  *ngIf="!checkinForm.controls.Fname.valid  && (checkinForm.controls.Fname.dirty || submitAttempt)">
+            <p>Please enter a valid name.</p>
+          </ion-item>
+        </ion-col>
+        <ion-col size="6">
+          <ion-item>
+            <ion-label position="floating" color="primary">Last Name:</ion-label>
+            <ion-input formControlName="Lname" type="text"
+                       [class.invalid]="!checkinForm.controls.Lname.valid && (checkinForm.controls.Lname.dirty || submitAttempt)"></ion-input>
+          </ion-item>
+          <ion-item
+                  *ngIf="!checkinForm.controls.Lname.valid  && (checkinForm.controls.Lname.dirty || submitAttempt)">
+            <p>Please enter a valid name.</p>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="6">
+          <ion-item>
+            <ion-label position="floating" color="primary">Telephone:</ion-label>
+            <ion-input formControlName="Phone" type="tel"
+                       [brmasker]="{mask: '(000)-000-0000', type:'num', len:14}"
+                       [class.invalid]="!checkinForm.controls.Phone.valid && (checkinForm.controls.Phone.dirty || submitAttempt)"></ion-input>
+          </ion-item>
+          <ion-item
+                  *ngIf="!checkinForm.controls.Phone.valid  && (checkinForm.controls.Phone.dirty || submitAttempt)">
+            <p>Please enter a valid phone number.</p>
+          </ion-item>
+        </ion-col>
+        <ion-col size="6">
+          <ion-item>
+            <ion-label position="floating" color="primary">Email:</ion-label>
+            <ion-input formControlName="Email" type="email"
+                       [class.invalid]="!checkinForm.controls.Email.valid && (checkinForm.controls.Email.dirty || submitAttempt)"></ion-input>
+          </ion-item>
+          <ion-item
+                  *ngIf="!checkinForm.controls.Email.valid  && (checkinForm.controls.Email.dirty || submitAttempt)">
+            <p>Please enter a valid email address.</p>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+
+<!--      <ion-item>
+        <ion-label position="floating" color="primary">Address:</ion-label>
+        <ion-input formControlName="Address" type="text"
+                   [class.invalid]="!checkinForm.controls.Address.valid && (checkinForm.controls.Address.dirty || submitAttempt)"></ion-input>
+      </ion-item>
+      <ion-item
+              *ngIf="!checkinForm.controls.Address.valid  && (checkinForm.controls.Address.dirty || submitAttempt)">
+        <p>Please enter a valid address.</p>
+      </ion-item>-->
+      <ion-row>
+        <ion-col size="6">
+          <ion-item>
+            <ion-label position="floating" color="primary">City:</ion-label>
+            <ion-input formControlName="City" type="text"
+                       [class.invalid]="!checkinForm.controls.City.valid && (checkinForm.controls.City.dirty || submitAttempt)"></ion-input>
+          </ion-item>
+          <ion-item
+                  *ngIf="!checkinForm.controls.City.valid  && (checkinForm.controls.City.dirty || submitAttempt)">
+            <p>Please enter a valid city.</p>
+          </ion-item>
+        </ion-col>
+        <ion-col size="6">
+          <ion-item>
+            <ion-label position="floating" color="primary">State:</ion-label>
+            <ion-input formControlName="State" type="text"
+                       [class.invalid]="!checkinForm.controls.State.valid && (checkinForm.controls.State.dirty || submitAttempt)"></ion-input>
+          </ion-item>
+          <ion-item
+                  *ngIf="!checkinForm.controls.State.valid  && (checkinForm.controls.State.dirty || submitAttempt)">
+            <p>Please enter a valid state / province.</p>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+<!--        <ion-col size="6">
+          <ion-item>
+            <ion-label position="floating" color="primary">Zip code:</ion-label>
+            <ion-input formControlName="Zip" type="text"
+                       [class.invalid]="!checkinForm.controls.Zip.valid && (checkinForm.controls.Zip.dirty || submitAttempt)"></ion-input>
+          </ion-item>
+          <ion-item
+                  *ngIf="!checkinForm.controls.Zip.valid  && (checkinForm.controls.Zip.dirty || submitAttempt)">
+            <p>Please enter a valid zip code.</p>
+          </ion-item>
+        </ion-col>-->
+        <ion-col size="12">
+          <ion-item>
+            <ion-label position="floating" color="primary">Country:</ion-label>
+            <ion-input formControlName="Country" type="text"
+                       [class.invalid]="!checkinForm.controls.Country.valid && (checkinForm.controls.Country.dirty || submitAttempt)"></ion-input>
+          </ion-item>
+          <ion-item
+                  *ngIf="!checkinForm.controls.Country.valid  && (checkinForm.controls.Country.dirty || submitAttempt)">
+            <p>Please enter a country.</p>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-item>
+        <ion-label position="stacked" color="primary" class="ion-text-wrap"
+                   style="margin-bottom: 10px">First time worshipping with us?
+        </ion-label>
+        <ion-select formControlName="Firsttimer" interface="action-sheet">
+          <ion-select-option value="Yes">Yes</ion-select-option>
+          <ion-select-option value="No">No</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-item
+              *ngIf="!checkinForm.controls.Firsttimer.valid  && (checkinForm.controls.Firsttimer.dirty || submitAttempt)">
+        <p>Please select an option.</p>
+      </ion-item>
+          <ion-item>
+            <ion-label position="stacked" color="primary" class="ion-text-wrap"
+                       style="margin-bottom: 10px">How many people are watching including yourself?
+            </ion-label>
+            <ion-input formControlName="People" type="number" min="1"
+                       [class.invalid]="!checkinForm.controls.People.valid && (checkinForm.controls.People.dirty || submitAttempt)"></ion-input>
+
+          </ion-item>
+          <ion-item
+                  *ngIf="!checkinForm.controls.People.valid  && (checkinForm.controls.People.dirty || submitAttempt)">
+            <p>Please select an option.</p>
+          </ion-item>
+      <section>
+        <ion-button color="winners-red" expand="block" slot="start" (click)="save()">
+          Submit
+        </ion-button>
+      </section>
+    </form>
+  </ion-list>
+</ion-content>

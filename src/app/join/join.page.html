@@ -1,0 +1,110 @@
+<ion-header>
+  <ion-toolbar color="winners-red">
+    <ion-text>
+      <div class="ion-text-wrap ion-text-end ion-paddings">
+        WINNERS CHAPEL INT'L <br> NEW YORK
+      </div>
+    </ion-text>
+    <ion-buttons slot="start" style="flex-flow: column">
+      <ion-menu-button></ion-menu-button>
+      <ion-back-button text="Back" icon="caret-back"></ion-back-button>
+    </ion-buttons>
+    <img src="assets/img/logo22.png" alt="" slot="end" width="70vw" class="ion-padding-vertical ion-padding-end">
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list class="remove-top">
+    <ion-item color="light">
+      <div class="ion-text-left">
+        <h5 style="font-weight: bold">JOIN THE TEAM</h5>
+      </div>
+    </ion-item>
+    <form [formGroup]="joinForm">
+      <ion-item>
+        <ion-label position="stacked" >First Name:</ion-label>
+        <ion-input formControlName="firstname" type="text" [class.invalid]="!joinForm.controls.firstname.valid && (joinForm.controls.firstname.dirty || submitAttempt)"></ion-input>
+      </ion-item>
+      <ion-item *ngIf="!joinForm.controls.firstname.valid  && (joinForm.controls.firstname.dirty || submitAttempt)">
+        <p>Please enter your first name.</p>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked" >Last Name:</ion-label>
+        <ion-input formControlName="lastname" type="text" [class.invalid]="!joinForm.controls.lastname.valid && (joinForm.controls.lastname.dirty || submitAttempt)"></ion-input>
+      </ion-item>
+      <ion-item *ngIf="!joinForm.controls.lastname.valid  && (joinForm.controls.lastname.dirty || submitAttempt)">
+        <p>Please enter your last name.</p>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Email:</ion-label>
+        <ion-input formControlName="email" type="email" [class.invalid]="!joinForm.controls.email.valid && (joinForm.controls.email.dirty || submitAttempt)"></ion-input>
+      </ion-item>
+      <ion-item *ngIf="!joinForm.controls.email.valid  && (joinForm.controls.email.dirty || submitAttempt)">
+        <p>Please enter a valid email address.</p>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked" >Phone:</ion-label>
+        <ion-input formControlName="phone" [brmasker]="{mask: '(000)-000-0000', type:'num', len:14}" type="tel" [class.invalid]="!joinForm.controls.phone.valid && (joinForm.controls.phone.dirty || submitAttempt)"></ion-input>
+      </ion-item>
+      <ion-item *ngIf="!joinForm.controls.phone.valid  && (joinForm.controls.phone.dirty || submitAttempt)">
+        <p>Please enter your phone number.</p>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked" color="primary" class="ion-text-wrap"
+                   style="margin-bottom: 10px">Department of Interest?
+        </ion-label>
+        <ion-select formControlName="department" interface="action-sheet">
+          <ion-select-option value="Ushering">Ushering</ion-select-option>
+          <ion-select-option value="Choir">Choir</ion-select-option>
+          <ion-select-option value="Children">Children</ion-select-option>
+          <ion-select-option value="Youth/Teen">Youth/Teen</ion-select-option>
+          <ion-select-option value="Welcome">Welcome</ion-select-option>
+          <ion-select-option value="Technical">Technical</ion-select-option>
+          <ion-select-option value="Sanctuary Keepers">Sanctuary Keepers</ion-select-option>
+          <ion-select-option value="Evangelism">Evangelism</ion-select-option>
+          <ion-select-option value="Welcome">Welcome</ion-select-option>
+          <ion-select-option value="Hospitality">Hospitality</ion-select-option>
+          <ion-select-option value="Medical">Medical</ion-select-option>
+          <ion-select-option value="Prayer Squad">Prayer Squad</ion-select-option>
+          <ion-select-option value="Protocol">Protocol</ion-select-option>
+          <ion-select-option value="Bookstore">Bookstore</ion-select-option>
+          <ion-select-option value="Security">Security</ion-select-option>
+          <ion-select-option value="Transport">Transport</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-item
+              *ngIf="!joinForm.controls.department.valid  && (joinForm.controls.department.dirty || submitAttempt)">
+        <p>Please select an option.</p>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Additional information:</ion-label>
+        <ion-textarea autoGrow="true" formControlName="info" [class.invalid]="!joinForm.controls.info.valid && (joinForm.controls.info.dirty || submitAttempt)"></ion-textarea>
+      </ion-item>
+      <ion-item *ngIf="!joinForm.controls.info.valid  && (joinForm.controls.info.dirty || submitAttempt)">
+        <p>Please enter your prayer request.</p>
+      </ion-item>
+      <ion-item [hidden]="true">
+        <ion-label position="floating">UserId:</ion-label>
+        <ion-input formControlName="approved" type="text"></ion-input>
+      </ion-item>
+      <ion-row>
+        <ion-col size="6">
+          <section>
+            <ion-button color="winners-red" expand="block" slot="start" (click)="save()">
+              Submit
+            </ion-button>
+          </section>
+        </ion-col>
+        <ion-col size="6">
+          <section>
+            <ion-button color="light" expand="block" slot="start" [routerLink]="['','tabs']" routerDirection="back">
+              Cancel
+            </ion-button>
+          </section>
+        </ion-col>
+      </ion-row>
+
+    </form>
+  </ion-list>
+
+</ion-content>

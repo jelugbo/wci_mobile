@@ -1,0 +1,15 @@
+.middlelogo {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+section {
+  margin-top: 1em;
+  margin-bottom: 2.5em;
+}
+
+section:not(.full-width),
+.full-width > header {
+  padding: 0 5px;
+}

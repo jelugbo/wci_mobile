@@ -1,0 +1,30 @@
+[
+  {
+    "Name": "General",
+    "Enabled": true,
+    "Value": 1,
+    "AgeCategory": "All",
+    "GenderCategory": "All"
+  },
+  {
+    "Name": "WSF Operators",
+    "Enabled": true,
+    "Value": 2,
+    "AgeCategory": "All",
+    "GenderCategory": "All"
+  },
+  {
+    "Name": "Youth Alive Fellowship",
+    "Enabled": true,
+    "Value": 3,
+    "AgeCategory": "18 - 30",
+    "GenderCategory": "All"
+  },
+  {
+    "Name": "Men of Valor",
+    "Enabled": true,
+    "Value": 3,
+    "AgeCategory": "All",
+    "GenderCategory": "Male"
+  }
+]

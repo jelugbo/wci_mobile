@@ -1,0 +1,151 @@
+<ion-header>
+    <ion-toolbar color="winners-red">
+        <ion-text>
+            <div class="ion-text-wrap ion-text-end ion-paddings">
+                WINNERS CHAPEL INT'L <br> NEW YORK
+            </div>
+        </ion-text>
+        <ion-buttons slot="start" style="flex-flow: column">
+            <ion-menu-button></ion-menu-button>
+            <ion-back-button text="Back" icon="caret-back"></ion-back-button>
+        </ion-buttons>
+        <img src="assets/img/logo22.png" alt="" slot="end" width="70vw" class="ion-padding-vertical ion-padding-end">
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-item color="light">
+        <div class="ion-text-left">
+            <h5 style="font-weight: bold">WOFBI FORM</h5>
+        </div>
+    </ion-item>
+    <ion-list>
+        <form [formGroup]="wofbiForm">
+            <div [hidden]="isPageTwo">
+                <ion-row>
+                    <ion-col size="6">
+                        <ion-item>
+                            <ion-label position="stacked" color="primary" >First Name:
+                            </ion-label>
+                            <ion-input formControlName="Fname" type="text"
+                                       [class.invalid]="!wofbiForm.controls.Fname.valid && (wofbiForm.controls.Fname.dirty || submitAttempt)"></ion-input>
+                        </ion-item>
+                        <ion-item
+                                *ngIf="!wofbiForm.controls.Fname.valid  && (wofbiForm.controls.Fname.dirty || submitAttempt)">
+                            <p>Please enter a valid name.</p>
+                        </ion-item>
+                    </ion-col>
+                    <ion-col size="6">
+                        <ion-item>
+                            <ion-label position="stacked" color="primary" >Last Name:
+                            </ion-label>
+                            <ion-input formControlName="Lname" type="text"
+                                       [class.invalid]="!wofbiForm.controls.Lname.valid && (wofbiForm.controls.Lname.dirty || submitAttempt)"></ion-input>
+                        </ion-item>
+                        <ion-item
+                                *ngIf="!wofbiForm.controls.Lname.valid  && (wofbiForm.controls.Lname.dirty || submitAttempt)">
+                            <p>Please enter a valid name.</p>
+                        </ion-item>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col size="6">
+                        <ion-item>
+                            <ion-label position="stacked" color="primary" >Telephone:
+                            </ion-label>
+                            <ion-input formControlName="Phone" type="tel"
+                                       [brmasker]="{mask: '(000)-000-0000', type:'num', len:14}"
+                                       [class.invalid]="!wofbiForm.controls.Phone.valid && (wofbiForm.controls.Phone.dirty || submitAttempt)"></ion-input>
+                        </ion-item>
+                        <ion-item
+                                *ngIf="!wofbiForm.controls.Phone.valid  && (wofbiForm.controls.Phone.dirty || submitAttempt)">
+                            <p>Please enter a valid phone number.</p>
+                        </ion-item>
+                    </ion-col>
+                    <ion-col size="6">
+                        <ion-item>
+                            <ion-label position="stacked" color="primary" >Email:</ion-label>
+                            <ion-input formControlName="Email" type="email"
+                                       [class.invalid]="!wofbiForm.controls.Email.valid && (wofbiForm.controls.Email.dirty || submitAttempt)"></ion-input>
+                        </ion-item>
+                        <ion-item
+                                *ngIf="!wofbiForm.controls.Email.valid  && (wofbiForm.controls.Email.dirty || submitAttempt)">
+                            <p>Please enter a valid email address.</p>
+                        </ion-item>
+                    </ion-col>
+                </ion-row>
+                <ion-item>
+                    <ion-label position="stacked" color="primary" class="ion-text-wrap" >
+                        Select WOFBI Certificate Course
+                    </ion-label>
+                    <ion-select formControlName="Course" interface="action-sheet">
+                        <ion-select-option value="Basic Certificate Course (BCC)">Basic Certificate Course (BCC)
+                        </ion-select-option>
+                        <ion-select-option value="Leadership Diploma Course (LDC)">Leadership Diploma Course (LDC)
+                        </ion-select-option>
+                        <ion-select-option value="Leadership Certificate Course (LCC)">Leadership Certificate Course
+                            (LCC)
+                        </ion-select-option>
+                    </ion-select>
+                </ion-item>
+                <ion-item
+                        *ngIf="!wofbiForm.controls.Course.valid  && (wofbiForm.controls.Course.dirty || submitAttempt)">
+                    <p>Please select a course.</p>
+                </ion-item>
+                <ion-item>
+                    <ion-label position="stacked" color="primary" class="ion-text-wrap" >
+                        Give details of your New Birth experience:
+                    </ion-label>
+                    <ion-textarea rows="2" autoGrow="true" formControlName="Comments"
+                                  [class.invalid]="!wofbiForm.controls.Comments.valid && (wofbiForm.controls.Comments.dirty || submitAttempt)"></ion-textarea>
+                  <!--  <ion-textarea rows="2" autoGrow="true" formControlName="Comments" tooltip="{{detailsTooltip}}" hideOthers="true" positionV="top" [arrow]="showArrow" [event]="tEvent" [duration]="duration"
+                                  [class.invalid]="!wofbiForm.controls.Comments.valid && (wofbiForm.controls.Comments.dirty || submitAttempt)"></ion-textarea>-->
+                </ion-item>
+                <ion-item
+                        *ngIf="!wofbiForm.controls.Comments.valid  && (wofbiForm.controls.Comments.dirty || submitAttempt)">
+                    <p>Please provide details.</p>
+                </ion-item>
+                <ion-item>
+                    <ion-label position="stacked" color="primary" class="ion-text-wrap" >Have
+                        you attended any other Bible College or Institution in the Past?
+                    </ion-label>
+                    <ion-select formControlName="PastCollege" interface="action-sheet">
+                        <ion-select-option value="Yes">Yes</ion-select-option>
+                        <ion-select-option value="No">No</ion-select-option>
+                    </ion-select>
+                </ion-item>
+                <ion-item
+                        *ngIf="!wofbiForm.controls.PastCollege.valid  && (wofbiForm.controls.PastCollege.dirty || submitAttempt)">
+                    <p>Please select an option.</p>
+                </ion-item>
+                <ion-item>
+                    <ion-label color="primary" class="ion-text-wrap" style="font-size: 13.3px">I accept honesty declaration
+                    </ion-label>
+                    <ion-checkbox slot="start" formControlName="Terms"
+                                  [class.invalid]="!wofbiForm.controls.Terms.valid && (wofbiForm.controls.Terms.dirty || submitAttempt)">
+                    </ion-checkbox>
+                </ion-item>
+                <ion-item
+                        *ngIf="!wofbiForm.controls.Terms.valid  && (wofbiForm.controls.Terms.dirty || submitAttempt)">
+                    <p>This field is mandatory</p>
+                </ion-item>
+                <ion-row>
+                    <ion-col size="12">
+                        <section>
+                            <ion-button color="winners-red" expand="block" slot="start" (click)="save()">
+                                Submit
+                            </ion-button>
+                        </section>
+                    </ion-col>
+ <!--                   <ion-col size="6">
+                        <section>
+                            <ion-button color="light" expand="block" slot="start" (click)="prev()">
+                                Go Back
+                            </ion-button>
+                        </section>
+                    </ion-col>-->
+                </ion-row>
+            </div>
+        </form>
+    </ion-list>
+</ion-content>
