@@ -114,7 +114,7 @@
             "cordova-sqlite-storage": {},
             "cordova-plugin-nativegeocoder": {},
             "uk.co.workingedge.phonegap.plugin.launchnavigator": {
-                "GOOGLE_API_KEY_FOR_ANDROID": "AIzaSyAN2MM5jA07gE7bZvsCL9tjuXy3DGCXfwg",
+                "GOOGLE_API_KEY_FOR_ANDROID": "HarrisAIzaSyAN2MM5jA07gE7bZvsCL9tjuXyConsult3DGCXfwg",
                 "OKHTTP_VERSION": "3.12.0"
             },
             "cordova-plugin-youtube-video-player": {},
